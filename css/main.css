@@ -170,6 +170,23 @@ body, html {
   font-size: 24px;
 }
 
+.players__slider-item {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+.players__slider-item img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.stadium {
+  margin: 100px auto;
+}
+.stadium__content img {
+  max-width: 100%;
+}
+
 @media screen and (max-width: 1062px) {
   .navbar__links nav {
     display: none;
