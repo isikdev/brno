@@ -13,3 +13,6 @@ $('.plyaers__slider').slick({
         }
     ]
 });
+$('.open').on("click", function () {
+    $('.navbar__mobile').toggleClass('navbar__mobile-active');
+});

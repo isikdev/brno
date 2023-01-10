@@ -4,11 +4,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: all .3s;
+    transition: all 0.3s;
 }
-body,html {
+body,
+html {
     scroll-behavior: smooth;
     font-family: Arial, Helvetica, sans-serif;
+    position: relative;
 }
 .container {
     max-width: 1200px;
@@ -129,7 +131,7 @@ body,html {
     }
 }
 .footer {
-    background-image: url("/assets/img/footer.svg");
+    background-image: url("../assets/img/footer.svg");
     background-repeat: no-repeat;
     background-size: cover;
     padding: 10px 0;
@@ -187,8 +189,47 @@ body,html {
         }
     }
 }
-
-
+.navbar__mobile {
+    display: none;
+    min-height: 100vh;
+    width: 60%;
+    position: fixed;
+    top: -820%;
+    left: 0;
+    z-index: 2000;
+    background-color: $blue;
+    padding: 15px 10px;
+    transition: 0.5s;
+    display: block;
+    nav {
+        ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            li {
+                text-align: center;
+                margin: 20px auto;
+                list-style: none;
+                a {
+                    color: #fff;
+                    text-align: center;
+                    text-decoration: none;
+                    font-size: 42px;
+                    margin: 20px auto;
+                }
+            }
+        }
+    }
+}
+.navbar__mobile-active {
+    top: 0;
+}
+.navbar__brand button {
+    display: none;
+    border: 0;
+    background: transparent;
+    width: 120px;
+}
 
 //media screen 1062
 @media screen and (max-width: 1062px) {
@@ -206,6 +247,25 @@ body,html {
     }
     .news__card-item {
         margin: 30px auto;
+    }
+    .navbar__brand {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .navbar__brand .prop {
+        margin-left: 10px;
+        display: block;
+    }
+    .navbar__brand .prop img {
+        width: 110px;
+    }
+    .footer__links nav {
+        display: none;
+    }
+    .navbar__brand .open {
+        display: block;
     }
 }
 @media screen and (max-width: 966px) {
@@ -239,7 +299,10 @@ body,html {
         margin-top: 0;
     }
     .navbar__brand img {
-        max-width: 100%;
+        max-width: 60%;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
     }
     .footer__links nav ul {
         flex-direction: column;
